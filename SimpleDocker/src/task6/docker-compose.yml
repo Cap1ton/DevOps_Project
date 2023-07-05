@@ -1,0 +1,10 @@
+version: "3"
+services:
+  nginx:
+    build: ./compose
+  nginxproxy:
+    build: ./compose_proxy
+    ports:
+      - "80:8080"
+    links:
+      - nginx
